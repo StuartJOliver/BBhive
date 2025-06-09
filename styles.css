@@ -1,0 +1,120 @@
+/* General styling */
+body {
+    font-family: 'Pangolin', sans-serif; /* Apply Pangolin font */
+    background-color: #121212;
+    color: #ffcc00; /* Default text color */
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #1a1a1a;
+}
+
+/* Logo with honey-like orange */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e69500; /* Warm honey tone */
+}
+
+/* Navigation menu */
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffcc00; /* Yellow text */
+    font-weight: bold;
+}
+
+/* Join Hive button */
+.join-hive {
+    background-color: #e69500; /* Honey-like orange */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Hero section with honeycomb background */
+.hero {
+    text-align: center;
+    padding: 5rem 2rem;
+    background-image: url('honey.webp'); /* Uses the honeycomb image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* "Welcome to the BB" bold with text outline */
+.hero h1 {
+    font-family: 'Roboto', sans-serif;
+    color: #e69500;
+    font-weight: 700; /* Increased thickness */
+    font-size: 4rem; /* Increased font size */
+    /*text-transform: uppercase;*/ /* Makes the text uppercase for a sharper look */
+    letter-spacing: 4px; /* Slightly increased spacing between letters */
+    text-shadow: -3px -3px 0 black,  
+                 3px -3px 0 black,  
+                -3px 3px 0 black,  
+                 3px 3px 0 black; /* Sharper text outline */
+}
+
+/* Separate "Hive" onto a new line */
+.hero h1 span {
+    display: block;
+}
+
+/* Paragraphs with pale yellow */
+.hero p {
+    color: #ffff99; /* Pale yellow */
+    font-size: 1.1rem;
+}
+
+/* Hero buttons */
+.hero-buttons button {
+    background-color: #e69500; /* Honey-like orange */
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Features section */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 4rem 2rem;
+    background-color: #333;
+}
+
+/* Feature titles in honey-like orange */
+.feature h2 {
+    color: #e69500;
+}
+
+/* Feature descriptions in pale yellow */
+.feature p {
+    color: #ffff99;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #1a1a1a;
+}
