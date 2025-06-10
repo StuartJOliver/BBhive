@@ -1,6 +1,6 @@
 /* General styling */
 body {
-    font-family: 'Pangolin', sans-serif; /* Apply Pangolin font */
+    font-family: 'Roboto', sans-serif; /* Replaced Pangolin with Roboto */
     background-color: #121212;
     color: #ffcc00; /* Default text color */
     margin: 0;
@@ -87,7 +87,7 @@ nav ul li a {
 
 /* "Welcome to the BB" bold with text outline */
 .hero h1 {
-    font-family: 'Roboto', sans-serif; /* Roboto is sharp and clean */
+    font-family: 'Roboto', sans-serif; /* Now using Roboto font */
     color: #e69500;
     font-weight: 700; /* Increased thickness */
     font-size: 4rem; /* Increased font size */
