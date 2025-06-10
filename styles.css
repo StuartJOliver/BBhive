@@ -10,8 +10,8 @@ body {
 
 /* Remove blue color from links */
 a {
-    color: inherit; /* Inherit the color from the parent element */
-    text-decoration: none; /* Removes underline */
+    color: inherit !important; /* Inherit the color from the parent element */
+    text-decoration: none !important; /* Removes underline */
 }
 
 /* Header styling */
@@ -225,20 +225,10 @@ footer {
         padding: 12px 20px;
         font-size: 18px;
     }
-    /* Remove blue color from links */
-    a {
-        color: inherit; /* Inherit the color from the parent element */
-        text-decoration: none; /* Removes underline */
-    }
 }
 
 /* Tablet responsiveness */
 @media (max-width: 1024px) {
-    /* Remove blue color from links */
-    a {
-        color: inherit; /* Inherit the color from the parent element */
-        text-decoration: none; /* Removes underline */
-    }
     .hero {
         padding: 4rem 1.5rem;
     }
