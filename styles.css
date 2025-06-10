@@ -5,6 +5,7 @@ body {
     color: #ffcc00; /* Default text color */
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 /* Header styling */
@@ -43,10 +44,35 @@ nav ul li a {
 /* Join Hive button */
 .join-hive {
     background-color: #e69500; /* Honey-like orange */
-    border: none;
-    padding: 10px 20px;
+    border: 2px solid transparent;
+    padding: 12px 25px;
     font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 30px; /* Rounded corners */
+}
+
+/* Pulse animation on hover */
+@keyframes pulse {
+    0% {
+        transform: scale(1); /* Initial size */
+        box-shadow: 0 0 10px rgba(231, 149, 0, 0.5); /* Light glow */
+    }
+    50% {
+        transform: scale(1.1); /* Grow to 110% size */
+        box-shadow: 0 0 20px rgba(231, 149, 0, 0.8); /* Stronger gold glow */
+    }
+    100% {
+        transform: scale(1); /* Return to normal size */
+        box-shadow: 0 0 10px rgba(231, 149, 0, 0.5); /* Light glow */
+    }
+}
+
+/* Hover effect for Join Hive button */
+.join-hive:hover {
+    background-color: #c78400; /* Darker shade of honey */
+    border: 2px solid #e69500; /* Gold rim */
+    animation: pulse 1s infinite; /* Pulse effect on hover */
 }
 
 /* Hero section with honeycomb background */
@@ -81,16 +107,28 @@ nav ul li a {
 .hero p {
     color: #ffff99; /* Pale yellow */
     font-size: 1.1rem;
+    max-width: 800px; /* Limit width to keep text from stretching too much */
+    margin: 0 auto; /* Center the text */
+    line-height: 1.6; /* Increase line-height for better readability */
 }
 
 /* Hero buttons */
 .hero-buttons button {
     background-color: #e69500; /* Honey-like orange */
-    border: none;
-    padding: 10px 20px;
+    border: 2px solid transparent;
+    padding: 12px 25px;
     margin: 10px;
     font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 30px; /* Rounded corners */
+}
+
+/* Pulse effect on hover for Hero buttons */
+.hero-buttons button:hover {
+    background-color: #c78400; /* Darker shade of honey */
+    border: 2px solid #e69500; /* Gold rim */
+    animation: pulse 1s infinite; /* Pulse effect on hover */
 }
 
 /* Features section */
@@ -99,16 +137,21 @@ nav ul li a {
     justify-content: space-around;
     padding: 4rem 2rem;
     background-color: #333;
+    flex-wrap: wrap; /* Allows features to stack on small screens */
+    gap: 20px; /* Adds spacing between features */
 }
 
 /* Feature titles in honey-like orange */
 .feature h2 {
     color: #e69500;
+    font-size: 1.5rem; /* Slightly smaller for a cleaner look */
 }
 
 /* Feature descriptions in pale yellow */
 .feature p {
     color: #ffff99;
+    font-size: 1rem; /* Keep the text readable and compact */
+    line-height: 1.5;
 }
 
 /* Footer */
@@ -136,6 +179,7 @@ footer {
     nav ul {
         display: block;
         padding: 0;
+        margin-top: 1rem;
     }
 
     nav ul li {
@@ -154,12 +198,16 @@ footer {
 
     .hero p {
         font-size: 1rem; /* Adjusted font size for smaller screens */
+        max-width: 100%;
+        padding: 0 1rem; /* Ensure padding around text on small screens */
     }
 
     /* Hero buttons */
     .hero-buttons button {
         font-size: 14px;
         padding: 8px 15px;
+        width: 100%;
+        border-radius: 30px;
     }
 
     /* Features section */
@@ -172,6 +220,14 @@ footer {
     .feature {
         margin-bottom: 1rem;
         text-align: center;
+        max-width: 350px;
+    }
+
+    /* Make buttons bigger for mobile */
+    .hero-buttons button {
+        width: 100%;
+        padding: 12px 20px; /* Make buttons more clickable */
+        font-size: 18px; /* Bigger font for easier reading */
     }
 }
 
@@ -184,5 +240,9 @@ footer {
 
     .hero h1 {
         font-size: 3rem; /* Adjust font size for tablets */
+    }
+
+    .hero p {
+        font-size: 1.2rem;
     }
 }
