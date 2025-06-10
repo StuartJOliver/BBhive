@@ -45,16 +45,17 @@ nav ul li a {
     font-weight: bold;
 }
 
-/* Join Hive button - fixed */
+/* Join Hive button */
 .join-hive {
     background-color: #e69500 !important; /* Honey-like orange */
-    color: inherit !important; /* Inherit color from parent */
+    color: #1a1a1a !important; /* Text color changed to match other buttons */
     border: 2px solid transparent;
     padding: 12px 25px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     border-radius: 30px;
+    width: auto; /* Allow button to adjust width based on content */
 }
 
 /* Hover effect for Join Hive button */
@@ -62,6 +63,7 @@ nav ul li a {
     background-color: #c78400 !important;  /* Darker honey tone */
     border: 2px solid #e69500;
     animation: pulse 1s ease-out infinite;
+    color: #1a1a1a; /* Ensures the text color stays the same on hover */
 }
 
 /* Pulse animation on hover */
