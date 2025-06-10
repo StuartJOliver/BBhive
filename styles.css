@@ -8,10 +8,10 @@ body {
     box-sizing: border-box;
 }
 
-/* Remove blue color from links */
+/* Remove blue color from links globally */
 a {
-    color: inherit !important; /* Inherit the color from the parent element */
-    text-decoration: none !important; /* Removes underline */
+    color: inherit !important; /* Inherit color from parent */
+    text-decoration: none !important; /* Remove underline */
 }
 
 /* Header styling */
@@ -45,15 +45,23 @@ nav ul li a {
     font-weight: bold;
 }
 
-/* Join Hive button */
+/* Join Hive button - fixed */
 .join-hive {
-    background-color: #e69500;
+    background-color: #e69500 !important; /* Honey-like orange */
+    color: inherit !important; /* Inherit color from parent */
     border: 2px solid transparent;
     padding: 12px 25px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     border-radius: 30px;
+}
+
+/* Hover effect for Join Hive button */
+.join-hive:hover {
+    background-color: #c78400 !important;  /* Darker honey tone */
+    border: 2px solid #e69500;
+    animation: pulse 1s ease-out infinite;
 }
 
 /* Pulse animation on hover */
@@ -70,13 +78,6 @@ nav ul li a {
         transform: scale(1);
         box-shadow: 0 0 10px rgba(231, 149, 0, 0.5);
     }
-}
-
-/* Hover effect for Join Hive button */
-.join-hive:hover {
-    background-color: #c78400;
-    border: 2px solid #e69500;
-    animation: pulse 1s ease-out infinite;
 }
 
 /* Hero section with honeycomb background */
