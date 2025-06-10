@@ -225,6 +225,11 @@ footer {
         padding: 12px 20px;
         font-size: 18px;
     }
+    /* Remove blue color from links */
+a {
+    color: inherit; /* Inherit the color from the parent element */
+    text-decoration: none; /* Removes underline */
+}
 }
 
 /* Tablet responsiveness */
@@ -240,4 +245,10 @@ footer {
     .hero p {
         font-size: 1.2rem;
     }
+    /* Remove blue color from links */
+a {
+    color: inherit; /* Inherit the color from the parent element */
+    text-decoration: none; /* Removes underline */
+}
+    
 }
