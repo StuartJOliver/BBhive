@@ -48,7 +48,7 @@ nav ul li a {
 /* Join Hive button - fixed */
 .join-hive {
     background-color: #e69500 !important; /* Honey-like orange */
-    color: inherit !important; /* Inherit color from parent */
+    color: #1a1a1a !important; /* Text color changed to #1a1a1a */
     border: 2px solid transparent;
     padding: 12px 25px;
     font-size: 16px;
@@ -62,6 +62,7 @@ nav ul li a {
     background-color: #c78400 !important;  /* Darker honey tone */
     border: 2px solid #e69500;
     animation: pulse 1s ease-out infinite;
+    color: #1a1a1a !important; /* Ensures the text color stays the same on hover */
 }
 
 /* Pulse animation on hover */
@@ -126,6 +127,7 @@ nav ul li a {
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     border-radius: 30px;
+    color: #1a1a1a; /* Text color changed to #1a1a1a */
 }
 
 /* Pulse effect on hover for Hero buttons */
@@ -133,6 +135,7 @@ nav ul li a {
     background-color: #c78400;
     border: 2px solid #e69500;
     animation: pulse 1s ease-out infinite;
+    color: #1a1a1a; /* Ensures the text color stays the same on hover */
 }
 
 /* Features section */
