@@ -1,24 +1,38 @@
-<!-- 404.html -->
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Page Not Found - BB Hive</title>
+  <meta http-equiv="Content-Language" content="en-GB" />
+  <meta name="description" content="Page not found - BB Hive Airsoft Community" />
+  <meta name="author" content="BB Hive Team" />
+  <title>404 - Page Not Found | BB Hive</title>
+
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" as="style" />
   <link rel="stylesheet" href="./styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
 </head>
 <body>
   <header>
-    <div class="logo">
-      <img src="./images/logo.png" alt="BB Hive logo" />
+    <div class="logo" aria-label="BB Hive logo">
+      <img src="./images/logo.png" alt="BB Hive logo, circular shape" />
     </div>
+    <nav class="navbar" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./community.html">Community</a></li>
+        <li><a href="./events.html">Events</a></li>
+        <li><a href="./about.html">About</a></li>
+      </ul>
+      <a href="./join.html" class="button nav-button" aria-label="Join the BB Hive community">Join the Hive</a>
+    </nav>
   </header>
 
   <main class="hero">
-    <h1>Oops! Page Not Found</h1>
-    <p>Looks like the hive doesn’t have what you’re looking for.</p>
+    <h1>404 - Page Not Found</h1>
+    <p>The page you're looking for doesn’t exist or may have been moved.</p>
     <div class="hero-buttons">
-      <a href="./index.html" class="button">Back to Home</a>
+      <a href="./index.html" class="button" aria-label="Return to homepage">Back to Home</a>
     </div>
   </main>
 
