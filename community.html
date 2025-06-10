@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Explore the BB Hive community. Share loadouts, strategies, and team up with UK airsoft players." />
   <meta name="keywords" content="Airsoft Community, BB Hive, UK Tactical Players" />
   <meta name="author" content="BB Hive Team" />
   <title>BB Hive - Community</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="chat.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
 </head>
 <body>
@@ -22,17 +23,75 @@
         <li><a href="events.html">Events</a></li>
         <li><a href="about.html">About</a></li>
       </ul>
-      <a href="join.html" class="button nav-button" aria-label="Join the BB Hive community">Join the Hive</a>
+      <a href="community.html" class="button nav-button" aria-label="Join the BB Hive community">Join the Hive</a>
     </nav>
   </header>
 
   <main id="main-content" aria-label="Main Content">
     <h1>Community</h1>
-    <!-- Add community content here -->
+    <section id="chat-section" aria-label="Community Chat">
+      <h2>Community Chat</h2>
+      <div id="chat-box" aria-live="polite" aria-relevant="additions"></div>
+      <form id="chat-form" aria-label="Send message form">
+        <input type="text" id="chat-input" name="message" placeholder="Type your message..." required autocomplete="off" />
+        <button type="submit" class="button">Send</button>
+      </form>
+    </section>
   </main>
 
   <footer role="contentinfo">
     <p>© 2025 BB Hive. All rights reserved.</p>
   </footer>
+
+  <script>
+    const chatBox = document.getElementById('chat-box');
+    const chatForm = document.getElementById('chat-form');
+    const chatInput = document.getElementById('chat-input');
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    async function fetchMessages() {
+      try {
+        const res = await fetch('/api/messages');
+        if (!res.ok) throw new Error('Failed to load messages');
+        const messages = await res.json();
+
+        chatBox.innerHTML = messages
+          .map(msg => `<div><strong>${escapeHtml(msg.user)}</strong>: ${escapeHtml(msg.text)}</div>`)
+          .join('');
+        chatBox.scrollTop = chatBox.scrollHeight;
+      } catch {
+        chatBox.innerHTML = `<div style="color:red;">Error loading messages.</div>`;
+      }
+    }
+
+    chatForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const message = chatInput.value.trim();
+      if (!message) return;
+
+      const newMessage = { user: 'Guest', text: message };
+
+      try {
+        const res = await fetch('/api/messages', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(newMessage),
+        });
+        if (!res.ok) throw new Error('Failed to send message');
+        chatInput.value = '';
+        fetchMessages();
+      } catch {
+        alert('Error sending message.');
+      }
+    });
+
+    fetchMessages();
+    setInterval(fetchMessages, 5000);
+  </script>
 </body>
 </html>
